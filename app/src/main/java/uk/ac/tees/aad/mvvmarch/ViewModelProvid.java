@@ -13,7 +13,7 @@ public class ViewModelProvid extends AndroidViewModel {
     public ViewModelProvid(@NonNull Application application) {
         super(application);
 
-        model = new Model("Welcome From MVMM");
+        model = new Model("Welcome From MVMM, :)");
     }
 
     public Model GetModel()
