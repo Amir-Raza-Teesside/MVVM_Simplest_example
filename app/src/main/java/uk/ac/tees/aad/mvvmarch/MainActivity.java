@@ -6,11 +6,13 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 
+import uk.ac.tees.aad.mvvmarch.ViewModel.UserViewModel;
 import uk.ac.tees.aad.mvvmarch.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
      ActivityMainBinding activityMainBinding;
+     UserViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
 
-        UserModel userModel = new UserModel("hm", "asss");
+        viewModel = ViewModelProviders.of(MainActivity.this).get(UserViewModel.class);
 
-        activityMainBinding.setUserModel(userModel);
+        activityMainBinding.setUserModel(viewModel.getUserModel());
 
 
 
