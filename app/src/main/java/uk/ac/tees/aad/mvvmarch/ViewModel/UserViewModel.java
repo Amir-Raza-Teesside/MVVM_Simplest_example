@@ -5,26 +5,23 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
+import uk.ac.tees.aad.mvvmarch.Repo.AppRepo;
 import uk.ac.tees.aad.mvvmarch.UserModel;
 
 public class UserViewModel extends AndroidViewModel {
 
-    UserModel userModel;
+    AppRepo appRepo;
 
     public UserViewModel(@NonNull Application application) {
 
 
         super(application);
-        userModel = new UserModel("Aamr","amirraza2501@gmail.com");
-        userModel = new UserModel("Aamr2","amirraza2501@gmail.com2");
+
+        appRepo = new AppRepo();
+
     }
 
-    public UserModel getUserModel()
-    {
-        if(userModel  !=null)
-        {
-            return  userModel;
-        }
-        return null;
+    public UserModel getAppRepo() {
+        return appRepo.getModel();
     }
 }

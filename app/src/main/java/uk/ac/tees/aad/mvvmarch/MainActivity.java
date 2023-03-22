@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel = ViewModelProviders.of(MainActivity.this).get(UserViewModel.class);
 
-        activityMainBinding.setUserModel(viewModel.getUserModel());
+        activityMainBinding.setUserModel(viewModel.getAppRepo());
 
 
 
