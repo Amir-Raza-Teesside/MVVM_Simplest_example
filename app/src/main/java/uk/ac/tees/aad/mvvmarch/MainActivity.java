@@ -11,14 +11,18 @@ import uk.ac.tees.aad.mvvmarch.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
      ActivityMainBinding activityMainBinding;
-     ViewModelProvid viewModelProvid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-       viewModelProvid = ViewModelProviders.of(this).get(ViewModelProvid.class);
-       activityMainBinding.setModel(viewModelProvid.GetModel());
+
+        UserModel userModel = new UserModel("hm", "asss");
+
+        activityMainBinding.setUserModel(userModel);
+
+
 
 
     }
